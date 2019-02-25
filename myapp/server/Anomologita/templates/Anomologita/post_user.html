@@ -1,0 +1,16 @@
+{% extends "Anomologita/base.html" %}
+{% block content %}
+<h1>Posts of user {{name}}</h1>
+{%if users_posts%}
+	<ul>
+
+	{% for post in users_posts%}
+		<li>{{post}}</li>
+	{% endfor %}
+	</ul>
+
+	{%else%}
+		<h2>No Posts</h2>
+	{% endif %}
+
+{% endblock %}

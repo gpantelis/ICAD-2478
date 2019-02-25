@@ -1,0 +1,26 @@
+{% extends "Anomologita/base.html" %}
+{% block content %}
+
+{%if all_users%}
+<h1>Home Page</h1>
+<ul>
+	{% for user in all_users %}
+	
+		<li>Posts of {{user}}:</li>
+	<ul>
+		{%for post in all_posts%}
+		{%if post.user_id == user.id%}
+			<li><a href ="{%url 'Anomologita:detail' post.id%}">{{post.title}}</a></li>
+
+		{%endif%}
+
+		{%endfor%}
+	</ul>
+	{% endfor %}
+</ul>
+
+{%else%}
+	<h3>No posts here</h3>
+{%endif%}
+	<a href="{%url 'Anomologita:button_new_user' %}"> Create User </a>
+{% endblock %}

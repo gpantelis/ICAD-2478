@@ -1,0 +1,41 @@
+{% extends "Anomologita/base.html" %}
+
+{% block content %}
+
+<form action="{%url 'Anomologita:new_user'%}" method = "post">
+	{% csrf_token %}
+	<div class="form-group">
+		<label for="username">Username</label>
+	    <input type="username" class="form-control" id="username" placeholder="username">
+	    
+	</div>
+
+	<div class="form-group">
+		<label for="InputPassword1">Password</label>
+   		<input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+  
+	</div>
+
+	<div class="form-group">
+		<label for="age">Ηλικία</label>
+		<input type="date" class="form-control" id="age">
+	</div>
+
+	<div class="form-group">
+		<label for="department">Επέλεξε Τμημα:</label>
+		<select class="form-control" id="department">
+			<option>ΔΕΤ</option>
+			<option>ΟΔΕ</option>
+			<option>ΔΕΟΣ</option>
+			<option>ΛΟΧΡΙ</option>
+			<option>ΠΛΗΡΟΦΟΡΙΚΗ</option>
+			<option>ΣΤΑΤΙΣΤΙΚΗ</option>
+			<option>ΜΑΡΚΕΤΙΝΓΚ</option>
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>	
+</form>
+
+
+{% endblock %}
