@@ -19,7 +19,7 @@ const TextArea = Input.TextArea;
     const text = event.target.elements.text.value;
     console.log('tha steilw: ',this.props.post.id,text,8)
     return Axios.post('http://127.0.0.1:8000/api/comments/',{
-        "user":8,
+        "user":localStorage.getItem('userid'),
         "post":this.props.post.id,
         "text":text
         
