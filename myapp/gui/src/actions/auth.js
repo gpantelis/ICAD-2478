@@ -42,7 +42,7 @@ export const checkAuthTimeout = expirationTime => {
         console.log('3ekina i metrisi')
 		setTimeout(()=>{
             console.log('---------------------------TELOS XRONO LOGOUT-----------------------')
-			dispatch(logout());
+			//dispatch(logout());
 		},expirationTime*1000)
 	};
 }
